@@ -16,7 +16,7 @@ int main(void){
 
   hexToBytes(object1,size,byteObj1);
   hexToBytes(object2,size,byteObj2);
-  for (size_t idx = 0; idx != (size+1)/2; ++idx){
+  for (size_t idx = 0; idx != byteAmount; ++idx){
     byteObj3[idx] = byteObj1[idx]^byteObj2[idx];
   }
 

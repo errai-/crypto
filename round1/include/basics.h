@@ -70,7 +70,7 @@ void hexToBytes(char *hexNo, size_t size, unsigned char *byteNo){
 void bytesToHex(unsigned char *byteNo, size_t size, char *hexNo){
   unsigned char tmpChar = 0;
   for (size_t idx = 0; idx != size; ++idx){
-    tmpChar = byteNo[idx/2]; 
+    tmpChar = byteNo[(size-1)/2-idx/2]; 
     if (idx%2==0){
       tmpChar <<= 4; tmpChar >>= 4;
     } else {
