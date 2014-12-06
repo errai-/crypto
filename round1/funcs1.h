@@ -13,7 +13,7 @@ char answer[] = "SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2h"
   "yb29t";
 
 int hexaConv( char no ){
-  for (int idx = 0; idx != 16; ++idx){
+  for (size_t idx = 0; idx != 16; ++idx){
     if ( hexas[idx] == no ) return idx;
   }
   return -1;
@@ -24,7 +24,7 @@ void reverseArray( char* array, int size ){
   size_t swaps = size/2;
   size_t upperStart = swaps;
   if (size%2!=0) upperStart++;
-  for (int i=0; i!=swaps; ++i){
+  for (size_t i=0; i!=swaps; ++i){
     tmpChar = array[swaps-1-i];
     array[swaps-1-i] = array[upperStart+i];
     array[upperStart+i] = tmpChar;
