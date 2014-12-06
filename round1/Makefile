@@ -1,22 +1,24 @@
 
-IDIR=../include
+IDIR=include
 CC=g++
-CFLAGS=-I$(IDIR) -Wall -O2 -Wextra
+CFLAGS=-I$(IDIR) -I. -Wall -O2 -Wextra
 
-ODIR=obj
-DEPS=
+ex1: main1.cpp 
+	$(CC) -o $@.exe $(CFLAGS) $<.cpp
 
-%.o: %.c $(DEPS)
-  $(CC) -c -o $@ $< $(CFLAGS)
+ex2: ex2.cpp
+	$(CC) -o $@.exe $(CFLAGS) $@.cpp
 
-1:  
+ex3: ex3.cpp
+	$(CC) -o $@.exe $(CFLAGS) $@.cpp
 
+ex4: ex4.cpp
+	$(CC) -o $@.exe $(CFLAGS) $@.cpp
 
-
-
-
+ex5: ex5.cpp
+	$(CC) -o $@.exe $(CFLAGS) $@.cpp
 
 .PHONY: clean
 
 clean:
-  rm -f $(ODIR)/*.o
+	rm -f *.exe
