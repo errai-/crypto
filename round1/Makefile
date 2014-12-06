@@ -1,10 +1,13 @@
 
 IDIR=include
 CC=g++
-CFLAGS=-I$(IDIR) -I. -Wall -O2 -Wextra
+CFLAGS=-I$(IDIR) -I./ -Wall -O2 -Wextra
 
 ex1: main1.cpp 
-	$(CC) -o $@.exe $(CFLAGS) $<.cpp
+	$(CC) -o $@.exe $(CFLAGS) $<
+
+ex1v1: main1v1.cpp
+	$(CC) -o $@.exe $(CFLAGS) $<
 
 ex2: ex2.cpp
 	$(CC) -o $@.exe $(CFLAGS) $@.cpp
