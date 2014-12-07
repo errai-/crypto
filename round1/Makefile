@@ -24,6 +24,9 @@ ex5: ex5.cpp
 ex6: ex6.cpp
 	$(CC) -o $@.exe $(CFLAGS) $@.cpp
 
+ex7: ex7.cpp
+	$(CC) -o $@.exe $(CFLAGS) $@.cpp
+
 tester: tester.cpp
 	$(CC) -o $@.exe $(CFLAGS) $@.cpp
 
