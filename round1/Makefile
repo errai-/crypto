@@ -21,6 +21,12 @@ ex4: ex4.cpp
 ex5: ex5.cpp
 	$(CC) -o $@.exe $(CFLAGS) $@.cpp
 
+ex6: ex6.cpp
+	$(CC) -o $@.exe $(CFLAGS) $@.cpp
+
+tester: tester.cpp
+	$(CC) -o $@.exe $(CFLAGS) $@.cpp
+
 .PHONY: clean
 
 clean:

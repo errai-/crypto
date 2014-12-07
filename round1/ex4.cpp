@@ -4,21 +4,6 @@
 #include <fstream>
 #include <string>
 
-bool isChar(char tested){
-  for (size_t i = 0; i != 52; ++i){
-    if (base64[i]==tested) return true;
-  } // i
-  return false;
-}
-
-size_t realChars(unsigned char* bytes, size_t size){
-  size_t counter = 0;
-  for (size_t i = 0; i != size; ++i){
-    if (isChar(bytes[i])) counter++;
-  }
-  return counter;
-}
-
 int main(void){
   std::ifstream input("4.txt");
   std::string tmpStr;
