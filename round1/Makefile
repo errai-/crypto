@@ -25,7 +25,10 @@ ex6: ex6.cpp
 	$(CC) -o $@.exe $(CFLAGS) $@.cpp
 
 ex7: ex7.cpp
-	$(CC) -o $@.exe $(CFLAGS) $@.cpp
+	$(CC) -o $@.exe $(CFLAGS) -lssl -lm -lcrypto $@.cpp
+
+ex8: ex8.cpp
+	$(CC) -o $@.exe $(CFLAGS) -lssl -lm -lcrypto $@.cpp
 
 tester: tester.cpp
 	$(CC) -o $@.exe $(CFLAGS) $@.cpp

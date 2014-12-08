@@ -13,24 +13,26 @@ int main(void){
   
   AES_set_decrypt_key(keyString,128,&key);
 
-  std::ifstream input("7.txt");
+  std::ifstream input("8.txt");
   std::string tmpStr;
-  std::string totStr("");
   
   while (!input.eof()){
     input >> tmpStr;
-    totStr+=tmpStr;
-  }
-  char encoded[totStr.size()+1];
-  encoded[totStr.size()]='\0';
-  memcpy(encoded,totStr.c_str(),totStr.size()); 
+    char encoded[tmpStr.size()+1];
+    encoded[tmpStr.size()]='\0';
     
-  size_t size = 0;
-  while (encoded[++size]!='\0');
-  size_t byteSize = 3*size/4+((size%4)?1:0);
+    memcpy(encoded,tmpStr.c_str(),tmpStr.size()); 
+    
+    size_t size = 0;
+    while (encoded[++size]!='\0');
+    
+    size_t byteSize = size/2+((size%2)?1:0);
+    unsigned char bytes[byteSize+1];
+    
+    HexToBytes(encoded,size,bytes);
+  }
+    
   
-  unsigned char bytes[byteSize+1];
-  Base64ToBytes(encoded,size,byteSize,bytes);
   
   unsigned char result[byteSize+1];
   size_t iterations = byteSize/16+((byteSize%16!=0)? 1 : 0);
