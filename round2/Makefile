@@ -7,7 +7,7 @@ ex9: ex9.cpp
 	$(CC) -o $@.exe $(CFLAGS) $<
 
 ex10: ex10.cpp
-	$(CC) -o $@.exe $(CFLAGS) $@.cpp
+	$(CC) -o $@.exe $(CFLAGS) -lssl -lm -lcrypto $@.cpp
 
 ex11: ex11.cpp
 	$(CC) -o $@.exe $(CFLAGS) $@.cpp
